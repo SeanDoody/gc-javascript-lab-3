@@ -1,9 +1,12 @@
+console.log('main lab start');
+
 const submissions = [
     { name: 'Jane', score: 95, date: '2020-01-24', passed: true },
     { name: 'Joe', score: 77, date: '2018-05-14', passed: true },
     { name: 'Jack', score: 59, date: '2019-07-05', passed: false },
     { name: 'Jill', score: 88, date: '2020-04-22', passed: true },
 ]
+
 function printSubmissions(array) {
     for (let submission of array) {
         console.log(submission);
@@ -27,7 +30,7 @@ function deleteSubmissionByIndex(array, index) {
     array.splice(index, 1)
 }
 
-console.log('removing Jane');
+console.log('removing Jane by index (0)');
 deleteSubmissionByIndex(submissions, 0);
 printSubmissions(submissions);
 
@@ -38,7 +41,7 @@ function deleteSubmissionByName(array, name) {
     }
 }
 
-console.log('deleting Joe');
+console.log('deleting Joe by name');
 deleteSubmissionByName(submissions, 'Joe');
 printSubmissions(submissions);
 
@@ -96,6 +99,9 @@ function filter90AndAbove(array) {
 console.log('filter to 90 and above');
 console.log(filter90AndAbove(submissions));
 
+console.log('main lab end');
+console.log('extended challenges start');
+
 function createRange(start, end) {
     if (start <= end) {
         const array = [];
@@ -110,24 +116,27 @@ function createRange(start, end) {
     }
 }
 
+console.log('creating array of integers in order from 5 to 10');
 console.log(createRange(5, 10));
+console.log('creating array of integers in order from 5 to 5');
 console.log(createRange(5, 5));
+console.log('creating array of integers in order from 10 to 5');
 console.log(createRange(10, 5));
 
 function countElements(array) {
     const newObject = {};
     for (let element of array) {
-        console.log(element);
-        if (Object.keys(newObject).includes(element)) {     // already in object
-            console.log('already in object');
+        if (Object.keys(newObject).includes(element)) { 
             newObject[element]++;
-        } else {                                            // not in object
-            console.log('not in object');
+        } else { 
             newObject[element] = 1;
         }
     }
     return newObject;
 }
 
+console.log('counting letters in this array:');
+console.log(`['a', 'b', 'a', 'c', 'a', 'b']`);
 console.log(countElements(['a', 'b', 'a', 'c', 'a', 'b']));
-// should print { a: 3, b: 2, c: 1 }
+
+console.log('extended challenges end');
